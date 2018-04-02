@@ -1,0 +1,13 @@
+---
+applications:
+- name: TestCFRabbitMQConsumer
+  memory: 768M
+  instances: 1
+  path: ./target/TestCFRabbitMQConsumer-0.0.1-SNAPSHOT.jar
+  no-route: true
+  health-check-type: process
+  env:
+    SPRING_PROFILES_ACTIVE: cloud    JBP_CONFIG_DEBUG: '{enabled: true}'
+  services:
+    - testRabbitMQ1
+    - rabbitMySql1G
